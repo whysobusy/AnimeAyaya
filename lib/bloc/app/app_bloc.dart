@@ -11,6 +11,7 @@ class AppBloc extends Bloc<AppEvent, AppState> {
     on<AppInit>(_onAppInit);
     on<AppUpdateHistory>(_onAppUpdateHistory);
     on<AppUpdateFavourite>(_onAPpUpdateFavourite);
+    on<AppUpdateDUB>(_onAppUpdateDUB);
   }
 
   final Cache cache = Cache();
@@ -21,6 +22,7 @@ class AppBloc extends Bloc<AppEvent, AppState> {
       emit(AppInitialized(
         favouriteList: cache.favouriteList,
         historyList: cache.historyList,
+        hideDUB: cache.hideDUB,
       ));
     } catch (e) {
       emit(AppError());
@@ -37,6 +39,7 @@ class AppBloc extends Bloc<AppEvent, AppState> {
       emit(AppInitialized(
         favouriteList: cache.favouriteList,
         historyList: cache.historyList,
+        hideDUB: cache.hideDUB,
       ));
     } catch (e) {
       emit(AppError());
@@ -53,6 +56,20 @@ class AppBloc extends Bloc<AppEvent, AppState> {
       emit(AppInitialized(
         favouriteList: cache.favouriteList,
         historyList: cache.historyList,
+        hideDUB: cache.hideDUB,
+      ));
+    } catch (e) {
+      emit(AppError());
+    }
+  }
+
+  void _onAppUpdateDUB(AppUpdateDUB event, emit) async {
+    try {
+      cache.hideDUB = event.hideDUB;
+      emit(AppInitialized(
+        favouriteList: cache.favouriteList,
+        historyList: cache.historyList,
+        hideDUB: cache.hideDUB,
       ));
     } catch (e) {
       emit(AppError());

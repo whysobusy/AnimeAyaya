@@ -20,7 +20,6 @@ class WatchAnimePage extends StatefulWidget {
 class _WatchAnimePageState extends State<WatchAnimePage> {
   @override
   void initState() {
-    // TODO: maybe toggle the native here???
     super.initState();
     // Fullscreen mode
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);

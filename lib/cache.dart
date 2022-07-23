@@ -13,11 +13,11 @@ class Cache {
   final hideDubAnime = 'Ayaya:HideDUB';
 
   /// Whwther dub anime should be hidden
-  bool? _hideDUB;
-  bool? get hideDUB => _hideDUB;
-  set hideDUB(bool? value) {
+  late bool _hideDUB;
+  bool get hideDUB => _hideDUB;
+  set hideDUB(bool value) {
     _hideDUB = value;
-    prefs.setBool(hideDubAnime, _hideDUB ?? false);
+    prefs.setBool(hideDubAnime, _hideDUB);
   }
 
   /// History list
@@ -51,7 +51,6 @@ class Cache {
   }
 
   Future<void> init() async {
-    // TODO load error
     // Setup shared preference
     prefs = await SharedPreferences.getInstance();
 

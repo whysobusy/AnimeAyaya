@@ -9,11 +9,13 @@ class AppInitialized extends AppState {
   AppInitialized({
     required this.favouriteList,
     required this.historyList,
+    required this.hideDUB,
   });
-  // TODO EQUATBLE
   final List<BasicAnime> favouriteList;
 
   final List<BasicAnime?> historyList;
+
+  final bool hideDUB;
 }
 
 class AppError extends AppState {}

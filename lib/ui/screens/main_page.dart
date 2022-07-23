@@ -1,5 +1,7 @@
+import 'package:anime_player/bloc/app/app_bloc.dart';
 import 'package:anime_player/ui/widgets/anime_grid.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 /// Movie class
 class MainPage extends StatefulWidget {
@@ -21,7 +23,14 @@ class _MainPageState extends State<MainPage>
 
   @override
   Widget build(BuildContext context) {
-    super.build(context);
-    return AnimeGrid(url: widget.url);
+    return BlocBuilder<AppBloc, AppState>(
+      builder: (context, state) {
+        if (state is AppInitialized) {
+          return AnimeGrid(url: widget.url, hideDUB: state.hideDUB,);
+        }
+
+        return CircularProgressIndicator();
+      },
+    );
   }
 }

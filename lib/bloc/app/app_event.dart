@@ -18,3 +18,8 @@ class AppUpdateHistory extends AppEvent {
   final BasicAnime? anime;
   final bool add;
 }
+
+class AppUpdateDUB extends AppEvent {
+  AppUpdateDUB({required this.hideDUB});
+  final bool hideDUB;
+}

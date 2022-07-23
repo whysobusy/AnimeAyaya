@@ -1,5 +1,7 @@
+import 'package:anime_player/bloc/app/app_bloc.dart';
 import 'package:anime_player/ui/widgets/anime_grid.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 /// CategoryPage class
 class CategoryPage extends StatelessWidget {
@@ -18,7 +20,18 @@ class CategoryPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(title ?? 'Unknown'),
       ),
-      body: AnimeGrid(url: url),
+      body: BlocBuilder<AppBloc, AppState>(
+          builder: (context, state) {
+            if (state is AppInitialized) {
+              return AnimeGrid(
+                url: url,
+                hideDUB: state.hideDUB,
+              );
+            }
+
+            return CircularProgressIndicator();
+          },
+        ),
     );
   }
 }

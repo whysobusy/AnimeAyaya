@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:anime_player/bloc/app/app_bloc.dart';
 import 'package:anime_player/constant.dart';
 import 'package:anime_player/data/models/anime_info.dart';
 import 'package:anime_player/parser/anime_parser.dart';
@@ -7,14 +8,17 @@ import 'package:anime_player/ui/screens/anime_detail_page.dart';
 import 'package:anime_player/ui/screens/episode_page.dart';
 import 'package:anime_player/ui/widgets/anime_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AnimeGrid extends StatefulWidget {
   const AnimeGrid({
     Key? key,
     required this.url,
+    required this.hideDUB,
   }) : super(key: key);
 
   final String? url;
+  final bool hideDUB;
 
   @override
   State<AnimeGrid> createState() => _AnimeGridState();
@@ -43,6 +47,8 @@ class _AnimeGridState extends State<AnimeGrid> {
     final parser = AnimeParser(link);
     parser.downloadHTML().then((value) {
       final moreData = parser.parseHTML(value);
+      if (widget.hideDUB) moreData.removeWhere((e) => e.isDUB);
+
       // Append more data
       setState(() {
         loading = false;
@@ -134,7 +140,7 @@ class _AnimeGridState extends State<AnimeGrid> {
                                       if (info.isCategory()) {
                                         return AnimeDetailPage(info: info);
                                       }
-                                        return EpisodePage(info: info);
+                                      return EpisodePage(info: info);
                                     }),
                                   );
                                 },
