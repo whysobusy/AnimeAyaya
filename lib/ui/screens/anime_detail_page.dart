@@ -3,18 +3,12 @@ import 'dart:math';
 import 'package:anime_player/bloc/anime_detail/anime_detail_cubit.dart';
 import 'package:anime_player/bloc/app/app_bloc.dart';
 import 'package:anime_player/bloc/episode_list/episode_list_cubit.dart';
-import 'package:anime_player/constant.dart';
 import 'package:anime_player/data/models/anime_detail_info.dart';
 import 'package:anime_player/data/models/basic_anime.dart';
-import 'package:anime_player/data/models/episode_info.dart';
-import 'package:anime_player/data/models/episode_section.dart';
-import 'package:anime_player/parser/detailed_info_parser.dart';
-import 'package:anime_player/parser/episode_list_parser.dart';
 import 'package:anime_player/ui/screens/category_page.dart';
 import 'package:anime_player/ui/screens/episode_page.dart';
 import 'package:anime_player/ui/screens/genre_page.dart';
 import 'package:anime_player/ui/widgets/anime_flat_button.dart';
-import 'package:anime_player/ui/widgets/loading_switcher.dart';
 import 'package:anime_player/ui/widgets/search_anime_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -29,7 +23,7 @@ class AnimeDetailPage extends StatefulWidget {
   final BasicAnime info;
 
   @override
-  _AnimeDetailPageState createState() => _AnimeDetailPageState();
+  State<AnimeDetailPage> createState() => _AnimeDetailPageState();
 }
 
 class _AnimeDetailPageState extends State<AnimeDetailPage> {
@@ -232,7 +226,7 @@ class _AnimeDetailPageState extends State<AnimeDetailPage> {
 
   Widget renderEpisodeList(BuildContext context, EpisodeListLoaded state) {
     if (state.currEpisode == null) {
-      return Text("Upcoming");
+      return const Text("Upcoming");
     } else {
       return Padding(
         padding: const EdgeInsets.only(bottom: 16),

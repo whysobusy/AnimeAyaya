@@ -21,6 +21,7 @@ class _MainPageState extends State<MainPage>
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return AnimeGrid(url: widget.url);
   }
 }

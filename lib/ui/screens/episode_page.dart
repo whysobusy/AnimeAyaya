@@ -22,7 +22,7 @@ class EpisodePage extends StatefulWidget {
   final BasicAnime? info;
 
   @override
-  _EpisodePageState createState() => _EpisodePageState();
+  State<EpisodePage> createState() => _EpisodePageState();
 }
 
 class _EpisodePageState extends State<EpisodePage>
@@ -170,7 +170,7 @@ class _EpisodePageState extends State<EpisodePage>
                   info.currentEpisodeLink,
                 ));
               } else {
-                if (e.link != null) launch(e.link!);
+                if (e.link != null) launchUrl(Uri.parse(e.link!));
                 _addToHistory(BasicAnime(
                   info.episodeName,
                   info.currentEpisodeLink,

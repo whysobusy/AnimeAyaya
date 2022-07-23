@@ -8,7 +8,7 @@ class SearchAnime extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _SearchAnimeState createState() => _SearchAnimeState();
+  State<SearchAnime> createState() => _SearchAnimeState();
 }
 
 class _SearchAnimeState extends State<SearchAnime> {

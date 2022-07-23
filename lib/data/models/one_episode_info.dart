@@ -24,6 +24,7 @@ class OneEpisodeInfo extends BasicAnime {
     // Get all video servers
     final server = e?.getElementsByClassName('anime_muti_link').first;
     final serverList = server?.nodes[1];
+    // ignore: avoid_function_literals_in_foreach_calls
     serverList?.nodes.forEach((element) {
       if (element.runtimeType == Element) {
         // Add to servers
@@ -33,8 +34,6 @@ class OneEpisodeInfo extends BasicAnime {
 
     final episode =
         e?.getElementsByClassName('anime_video_body_episodes').first;
-
-    // TODO: make this look nicer
     try {
       nextEpisodeLink = episode?.nodes[3].nodes[1].attributes['href'];
     } catch (_) {}

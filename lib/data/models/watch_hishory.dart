@@ -11,9 +11,9 @@ class WatchHistory extends BasicAnimeList {
   @override
   bool contains(BasicAnime? anime) {
     if (anime is OneEpisodeInfo) {
-      return list.any((e) => e?.name == anime.episodeName);
+      return list.any((e) => e.name == anime.episodeName);
     } else {
-      return list.any((e) => e?.name == anime?.name);
+      return list.any((e) => e.name == anime?.name);
     }
   }
 

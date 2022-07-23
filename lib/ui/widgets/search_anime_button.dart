@@ -19,7 +19,7 @@ class SearchAnimeButton extends StatelessWidget {
       children: <Widget>[
         AnimeFlatButton(
           onPressed: () {
-            launch('https://www.google.com/search?q=$name');
+            launchUrl(Uri.parse('https://www.google.com/search?q=$name'));
           },
           child: const Text(
             'Google',
@@ -27,7 +27,7 @@ class SearchAnimeButton extends StatelessWidget {
         ),
         AnimeFlatButton(
           onPressed: () {
-            launch('https://duckduckgo.com/?q=$name');
+            launchUrl(Uri.parse('https://duckduckgo.com/?q=$name'));
           },
           child: const Text('DuckDuckGo'),
         ),

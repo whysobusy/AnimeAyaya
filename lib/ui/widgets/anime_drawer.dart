@@ -2,7 +2,6 @@ import 'package:anime_player/Util.dart';
 import 'package:anime_player/ui/screens/favourite.dart';
 import 'package:anime_player/ui/screens/history.dart';
 import 'package:anime_player/ui/screens/setting.dart';
-import 'package:anime_player/ui/widgets/genre_list.dart';
 import 'package:flutter/material.dart';
 
 /// AnimeDrawer class
@@ -12,7 +11,7 @@ class AnimeDrawer extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _AnimeDrawerState createState() => _AnimeDrawerState();
+  State<AnimeDrawer> createState() => _AnimeDrawerState();
 }
 
 class _AnimeDrawerState extends State<AnimeDrawer> {
@@ -29,7 +28,7 @@ class _AnimeDrawerState extends State<AnimeDrawer> {
       child: Column(
         children: <Widget>[
           DrawerHeader(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               // Use black instead orange to not hurt users' eyes at night
               color:  Colors.black38
             ),

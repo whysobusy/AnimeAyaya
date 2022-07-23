@@ -53,6 +53,7 @@ class AnimeDetailedInfo {
     final animeID = movieClass?.attributes['value'];
 
     final episodeClass = body?.getElementById('episode_page');
+    // ignore: avoid_function_literals_in_foreach_calls
     episodeClass?.nodes.forEach((element) {
       if (element is Element) {
         episodes.add(EpisodeSection(element, animeID));

@@ -13,7 +13,7 @@ class Settings extends StatefulWidget {
   final bool showAppBar;
 
   @override
-  _SettingsState createState() => _SettingsState();
+  State<Settings> createState() => _SettingsState();
 }
 
 class _SettingsState extends State<Settings> {
@@ -44,7 +44,7 @@ class _SettingsState extends State<Settings> {
             title: const Text('Support me :)'),
             subtitle: const Text(
                 'If you really like this app, you can consider buying me a pizza but any amount is greatly appreciated'),
-            onTap: () => launch('https://www.paypal.me/yihengquan'),
+            onTap: () => launchUrl(Uri.parse('https://www.paypal.me/yihengquan')),
           ),
           ListTile(
             title: const Padding(
@@ -93,7 +93,7 @@ class _SettingsState extends State<Settings> {
                 ),
               ],
             ),
-            onTap: () => launch(Constant.defaultDomain),
+            onTap: () => launchUrl(Uri.parse(Constant.defaultDomain)),
           ),
           CheckboxListTile(
             title: const Text('Hide Dub'),

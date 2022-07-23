@@ -17,6 +17,7 @@ class EpisodeListParser extends BasicParser {
     List<EpisodeInfo> list = [];
     final episodeClass = body?.getElementById('episode_related');
     // It starts from the latest (reversed) but it might be a good idea
+    // ignore: avoid_function_literals_in_foreach_calls
     episodeClass?.nodes.forEach((element) {
       if (element.runtimeType == Element) {
         list.add(EpisodeInfo(element as Element));

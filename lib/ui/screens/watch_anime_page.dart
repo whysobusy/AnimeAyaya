@@ -14,7 +14,7 @@ class WatchAnimePage extends StatefulWidget {
   final VideoServer video;
 
   @override
-  _WatchAnimePageState createState() => _WatchAnimePageState();
+  State<WatchAnimePage> createState() => _WatchAnimePageState();
 }
 
 class _WatchAnimePageState extends State<WatchAnimePage> {

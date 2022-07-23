@@ -41,7 +41,7 @@ class Favourite extends StatelessWidget {
           );
         }
 
-        return Scaffold(
+        return const Scaffold(
           body: Center(
             child: CircularProgressIndicator(),
           ),

@@ -18,8 +18,8 @@ class History extends StatelessWidget {
             appBar: AppBar(actions: [
               InkWell(onTap: () {
                 BlocProvider.of<AppBloc>(context).add(AppUpdateHistory(add: false));
-              }, child: Icon(Icons.cleaning_services))
-            ], title: Text('Watch History')),
+              }, child: const Icon(Icons.cleaning_services))
+            ], title: const Text('Watch History')),
             body: 
   
                   state.historyList.isNotEmpty
@@ -40,13 +40,13 @@ class History extends StatelessWidget {
                             );
                           },
                         )
-                      : Center(
+                      : const Center(
                           child: Text('No anime found'),
                         )
                 );
         }
 
-        return Center(child: CircularProgressIndicator(),);
+        return const Center(child: CircularProgressIndicator(),);
       },
     );
   }

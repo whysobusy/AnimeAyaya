@@ -16,7 +16,7 @@ abstract class BasicAnimeList {
 
   void remove(BasicAnime? anime) {
     list.removeWhere((e) {
-      return e?.link == anime?.link;
+      return e.link == anime?.link;
     });
   }
 
@@ -27,7 +27,7 @@ abstract class BasicAnimeList {
   }
 
   Map<String, dynamic> toJson() =>
-      {getName(): list.map((e) => e?.toJson()).toList(growable: false)};
+      {getName(): list.map((e) => e.toJson()).toList(growable: false)};
 
   String getName();
 }
