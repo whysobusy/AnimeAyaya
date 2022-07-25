@@ -8,6 +8,7 @@ import 'package:anime_player/data/models/basic_anime.dart';
 import 'package:anime_player/ui/screens/category_page.dart';
 import 'package:anime_player/ui/screens/episode_page.dart';
 import 'package:anime_player/ui/screens/genre_page.dart';
+import 'package:anime_player/ui/screens/loading_page.dart';
 import 'package:anime_player/ui/widgets/anime_flat_button.dart';
 import 'package:anime_player/ui/widgets/search_anime_button.dart';
 import 'package:flutter/material.dart';
@@ -75,9 +76,7 @@ class _AnimeDetailPageState extends State<AnimeDetailPage> {
             );
           }
 
-          return const Center(
-            child: CircularProgressIndicator(),
-          );
+          return const LoadingPage();
         },
       ),
     );

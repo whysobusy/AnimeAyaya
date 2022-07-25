@@ -1,5 +1,6 @@
 import 'package:anime_player/bloc/app/app_bloc.dart';
 import 'package:anime_player/data/models/anime_genre.dart';
+import 'package:anime_player/ui/screens/loading_page.dart';
 import 'package:anime_player/ui/widgets/anime_grid.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -28,7 +29,7 @@ class GenrePage extends StatelessWidget {
               );
             }
 
-            return CircularProgressIndicator();
+            return const LoadingPage();
           },
         ));
   }

@@ -1,4 +1,5 @@
 import 'package:anime_player/bloc/app/app_bloc.dart';
+import 'package:anime_player/ui/screens/loading_page.dart';
 import 'package:anime_player/ui/widgets/anime_grid.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -21,28 +22,36 @@ class _SearchAnimeState extends State<SearchAnime> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: TextField(
-          style: const TextStyle(color: Colors.white, fontSize: 20),
-          decoration: const InputDecoration.collapsed(
-            hintText: 'Search anime',
-            hintStyle: TextStyle(color: Colors.white70, fontSize: 20),
+        title: Container(
+          height: 50,
+          margin: const EdgeInsets.symmetric(horizontal: 10),
+          child: TextField(
+            style: const TextStyle(color: Colors.black, fontSize: 20),
+            decoration: InputDecoration(
+                filled: true,
+                fillColor: Colors.white,
+                prefixIcon: const Icon(Icons.search, color: Colors.pink),
+                border: OutlineInputBorder(
+                  borderSide: const BorderSide(color: Colors.pink, width: 2.0),
+                  borderRadius: BorderRadius.circular(25.0),
+                )),
+            cursorColor: Colors.black,
+            autocorrect: false,
+            autofocus: true,
+            onChanged: (t) {
+              setState(() {
+                search = t;
+                formattedSearch = '';
+              });
+            },
+            onEditingComplete: () {
+              FocusScope.of(context).requestFocus(FocusNode());
+              setState(() {
+                // Replcae space with %20
+                formattedSearch = search.split(' ').join('%20');
+              });
+            },
           ),
-          cursorColor: Colors.white70,
-          autocorrect: false,
-          autofocus: true,
-          onChanged: (t) {
-            setState(() {
-              search = t;
-              formattedSearch = '';
-            });
-          },
-          onEditingComplete: () {
-            FocusScope.of(context).requestFocus(FocusNode());
-            setState(() {
-              // Replcae space with %20
-              formattedSearch = search.split(' ').join('%20');
-            });
-          },
         ),
       ),
       body: renderGrid(),
@@ -62,7 +71,7 @@ class _SearchAnimeState extends State<SearchAnime> {
             );
           }
 
-          return CircularProgressIndicator();
+          return const LoadingPage();
         },
       );
     }

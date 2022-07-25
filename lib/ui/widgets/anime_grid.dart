@@ -1,14 +1,12 @@
 import 'dart:math';
-
-import 'package:anime_player/bloc/app/app_bloc.dart';
 import 'package:anime_player/constant.dart';
 import 'package:anime_player/data/models/anime_info.dart';
 import 'package:anime_player/parser/anime_parser.dart';
 import 'package:anime_player/ui/screens/anime_detail_page.dart';
 import 'package:anime_player/ui/screens/episode_page.dart';
+import 'package:anime_player/ui/screens/loading_page.dart';
 import 'package:anime_player/ui/widgets/anime_card.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AnimeGrid extends StatefulWidget {
   const AnimeGrid({
@@ -96,9 +94,7 @@ class _AnimeGridState extends State<AnimeGrid> {
   @override
   Widget build(BuildContext context) {
     if (loading) {
-      return const Center(
-        child: CircularProgressIndicator(),
-      );
+      return const LoadingPage();
     }
 
     return SafeArea(
@@ -159,7 +155,7 @@ class _AnimeGridState extends State<AnimeGrid> {
           showIndicator
               ? const Align(
                   alignment: Alignment.bottomCenter,
-                  child: LinearProgressIndicator(),
+                  child: LoadingPage()
                 )
               : Container(),
         ],

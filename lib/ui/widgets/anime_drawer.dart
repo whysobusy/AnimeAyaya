@@ -1,7 +1,6 @@
-import 'package:anime_player/Util.dart';
-import 'package:anime_player/ui/screens/favourite.dart';
-import 'package:anime_player/ui/screens/history.dart';
-import 'package:anime_player/ui/screens/setting.dart';
+import 'package:anime_player/ui/screens/drawer/favourite.dart';
+import 'package:anime_player/ui/screens/drawer/history.dart';
+import 'package:anime_player/ui/screens/drawer/setting.dart';
 import 'package:flutter/material.dart';
 
 /// AnimeDrawer class
@@ -22,15 +21,13 @@ class _AnimeDrawerState extends State<AnimeDrawer> {
 
   @override
   Widget build(BuildContext context) {
-    bool darkMode = Util(context).isDarkMode();
-
     return Drawer(
       child: Column(
         children: <Widget>[
-          DrawerHeader(
-            decoration: const BoxDecoration(
+          const DrawerHeader(
+            decoration: BoxDecoration(
               // Use black instead orange to not hurt users' eyes at night
-              color:  Colors.black38
+              color:  Colors.pinkAccent
             ),
             child: Align(
               alignment: Alignment.bottomLeft,
@@ -39,7 +36,7 @@ class _AnimeDrawerState extends State<AnimeDrawer> {
                 style: TextStyle(
                   fontSize: 32,
                   // Different colour for dark mode
-                  color: darkMode ? Colors.orange : Colors.white,
+                  color: Colors.white,
                   fontWeight: FontWeight.w700,
                 ),
               ),
@@ -53,7 +50,7 @@ class _AnimeDrawerState extends State<AnimeDrawer> {
                 children: <Widget>[
                   ListTile(
                     title: const Text('History'),
-                    leading: const Icon(Icons.history),
+                    leading: const Icon(Icons.history, color: Colors.pinkAccent,),
                     onTap: () => push(
                       context,
                       const History(),
@@ -61,7 +58,7 @@ class _AnimeDrawerState extends State<AnimeDrawer> {
                   ),
                   ListTile(
                     title: const Text('Favourite'),
-                    leading: const Icon(Icons.favorite),
+                    leading: const Icon(Icons.favorite, color: Colors.pinkAccent,),
                     onTap: () => push(
                       context,
                       const Favourite(),
@@ -70,7 +67,7 @@ class _AnimeDrawerState extends State<AnimeDrawer> {
                   const Divider(),
                   ListTile(
                     title: const Text('Settings'),
-                    leading: const Icon(Icons.settings),
+                    leading: const Icon(Icons.settings, color: Colors.pinkAccent,),
                     onTap: () => push(
                       context,
                       const Settings(),

@@ -13,58 +13,80 @@ class HomePage extends StatelessWidget {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
-          title: TextField(
-            onTap: () {
-              Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => const SearchAnime()));
-            },
+          title: Container(
+            height: 40,
+            margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+            child: TextField(
+              decoration: InputDecoration(
+                filled: true,
+                fillColor: Colors.white,
+                prefixIcon: const Icon(Icons.search, color: Colors.pink),
+                border: OutlineInputBorder(
+                  borderSide: const BorderSide(color: Colors.pink, width: 2.0),
+                  borderRadius: BorderRadius.circular(25.0),
+                ),
+                hintText: 'Search Anime',
+                hintStyle: const TextStyle(color: Colors.grey, fontSize: 15),
+              ),
+              autofocus: false,
+              showCursor: false,
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const SearchAnime()));
+              },
+            ),
           ),
           bottom: PreferredSize(
             preferredSize: const Size.fromHeight(48.0),
-            child: Theme(
-              data: Theme.of(context).copyWith(colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.white)),
-              child: Container(
+            child:  Container(
                 height: 48.0,
                 alignment: Alignment.center,
+                margin: const EdgeInsets.only(left: 20, right: 20),
                 child: Row(
                   children: [
                     const Expanded(
-                      child: TabBar(tabs: [
-                                Tab(
-                                  text: "New Release",
-                                ),
-                                Tab(
-                                  text: "Popular",
-                                ),
-                                Tab(
-                                  text: "Movie",
-                                ),
-                              ]),
-                              
+                      child: TabBar(
+                        indicatorColor: Colors.pinkAccent,
+                        tabs: [
+                        Tab(
+                          text: "New Release",
+                        ),
+                        Tab(
+                          text: "Popular",
+                        ),
+                        Tab(
+                          text: "Movie",
+                        ),
+                      ]),
                     ),
-                    InkWell(onTap: () {
-                      Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => GenreList(),
-                  ),
-                );
-                    }, child: const Icon(Icons.ac_unit)),
+                    InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => GenreList(),
+                            ),
+                          );
+                        },
+                        child: const Icon(Icons.grid_view, color: Colors.pinkAccent,)),
                   ],
                 ),
               ),
-            ),
+            
           ),
-          
-          
-          
         ),
         drawer: const AnimeDrawer(),
         body: const TabBarView(
           children: [
-            MainPage(url: '/page-recent-release.html',),
-            MainPage(url: '/popular.html',),
-            MainPage(url: '/anime-movies.html',),
+            MainPage(
+              url: '/page-recent-release.html',
+            ),
+            MainPage(
+              url: '/popular.html',
+            ),
+            MainPage(
+              url: '/anime-movies.html',
+            ),
             //GenreList(),
           ],
         ),

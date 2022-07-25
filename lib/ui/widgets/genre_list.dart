@@ -1,7 +1,5 @@
-
 import 'package:anime_player/data/models/anime_genre.dart';
 import 'package:anime_player/ui/screens/genre_page.dart';
-import 'package:anime_player/ui/widgets/anime_flat_button.dart';
 import 'package:flutter/material.dart';
 
 /// GenreList class
@@ -63,23 +61,44 @@ class GenreList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Wrap(
-        alignment: WrapAlignment.spaceEvenly,
-        children: renderGenres(context),
+      appBar: AppBar(
+        title: const Text("Genre"),
       ),
+      body:  Container(
+      padding: const EdgeInsets.all(10.0),
+      child: GridView.builder(
+        physics: const NeverScrollableScrollPhysics(),
+        shrinkWrap: true,
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 6,
+          childAspectRatio: 1.0,
+          mainAxisSpacing: 10.0,
+          crossAxisSpacing: 10.0,
+        ),
+        itemCount: genreList.length,
+        itemBuilder: (context, index) {
+          return Container(
+            decoration: BoxDecoration(
+              color: Colors.pinkAccent,
+              border: Border.all(width: 3.0),
+              borderRadius: BorderRadius.circular(10)
+            ),
+            child: InkWell(
+      onTap: (() => _onPressed(genreList[index], context)),
+      child: Center(child: Text(
+      style: const TextStyle(color: Colors.white, fontSize: 12, fontStyle: FontStyle.italic ),
+      genreList[index]
+      )),
+    ),
+          );
+        },
+      ),
+      )
     );
   }
 
-  /// Render all genres as chips
-  List<Widget> renderGenres(BuildContext context) {
-    // Return a fixed length array (growable to be false)
-    return genreList
-        .map(
-          (item) => AnimeFlatButton(
-            child: Text(item),
-            onPressed: () {
-              final genre = AnimeGenre(item);
-              if (func == null) {
+  void _onPressed(String item, context) {
+    final genre = AnimeGenre(item);
                 Navigator.pop(context);
                 Navigator.push(
                   context,
@@ -87,12 +106,5 @@ class GenreList extends StatelessWidget {
                     builder: (context) => GenrePage(genre: genre),
                   ),
                 );
-              } else {
-                func!(genre.getFullLink());
-              }
-            },
-          ),
-        )
-        .toList(growable: false);
   }
 }

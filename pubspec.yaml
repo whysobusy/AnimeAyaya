@@ -38,6 +38,7 @@ dependencies:
   shared_preferences: ^2.0.3
   share: ^2.0.0
   webview_flutter: ^3.0.2
+  loading_animation_widget:
 
 dev_dependencies:
   flutter_test:

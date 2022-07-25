@@ -1,5 +1,6 @@
 import 'package:anime_player/bloc/app/app_bloc.dart';
 import 'package:anime_player/ui/screens/episode_page.dart';
+import 'package:anime_player/ui/screens/loading_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -46,7 +47,7 @@ class History extends StatelessWidget {
                 );
         }
 
-        return const Center(child: CircularProgressIndicator(),);
+        return const LoadingPage();
       },
     );
   }

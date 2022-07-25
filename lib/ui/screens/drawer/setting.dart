@@ -1,9 +1,7 @@
 import 'package:anime_player/bloc/app/app_bloc.dart';
-import 'package:anime_player/constant.dart';
-import 'package:anime_player/ui/widgets/anime_flat_button.dart';
+import 'package:anime_player/ui/screens/loading_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 /// Settings class
 class Settings extends StatefulWidget {
@@ -40,7 +38,7 @@ class _SettingsState extends State<Settings> {
           );
         }
 
-        return CircularProgressIndicator();
+        return const LoadingPage();
       },
     );
   }

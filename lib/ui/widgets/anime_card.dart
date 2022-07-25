@@ -44,7 +44,7 @@ class AnimeCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(12),
             child: Container(
               height: 24,
-              color: Colors.black,
+              color: Colors.pinkAccent,
               child: Center(
                 child: Text(
                   info.episode ?? '??',

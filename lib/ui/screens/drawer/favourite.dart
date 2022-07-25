@@ -1,5 +1,6 @@
 import 'package:anime_player/bloc/app/app_bloc.dart';
 import 'package:anime_player/ui/screens/anime_detail_page.dart';
+import 'package:anime_player/ui/screens/loading_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -41,11 +42,7 @@ class Favourite extends StatelessWidget {
           );
         }
 
-        return const Scaffold(
-          body: Center(
-            child: CircularProgressIndicator(),
-          ),
-        );
+        return const LoadingPage();
       },
     );
   }
