@@ -21,10 +21,10 @@ class _SearchAnimeState extends State<SearchAnime> {
   @override
   Widget build(BuildContext context) {
     final Widget child;
-    if (formattedSearch.length < 3) {
+    if (formattedSearch.isEmpty) {
       child = const Center(
         child: Image(
-          image: AssetImage('assets/images/gwen.jpg'),
+          image: AssetImage('assets/images/bg.png'),
         )
       );
     } else {
@@ -43,6 +43,7 @@ class _SearchAnimeState extends State<SearchAnime> {
     }
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: Container(
           height: 50,

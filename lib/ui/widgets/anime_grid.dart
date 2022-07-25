@@ -154,9 +154,7 @@ class _AnimeGridState extends State<AnimeGrid> {
           ),
           showIndicator
               ? const Align(
-                  alignment: Alignment.bottomCenter,
-                  child: LoadingPage()
-                )
+                  alignment: Alignment.bottomCenter, child: LoadingPage())
               : Container(),
         ],
       ),

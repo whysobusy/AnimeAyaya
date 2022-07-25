@@ -137,58 +137,6 @@ class _EpisodePageState extends State<EpisodePage>
       ),
     );
   }
-  //TODO
-
-  // List<Widget>? renderServerList(OneEpisodeInfo info) {
-  //   return info.servers.map((e) {
-  //     return Padding(
-  //       padding: const EdgeInsets.only(right: 8),
-  //       child: Tooltip(
-  //         message: 'Watch on ${e.title} server',
-  //         child: ActionChip(
-  //           onPressed: () {
-  //             if (Util.isMobile()) {
-  //               openInAppPlayer(e);
-  //               _addToHistory(BasicAnime(
-  //                 info.episodeName,
-  //                 info.currentEpisodeLink,
-  //               ));
-  //             } else {
-  //               if (e.link != null) launchUrl(Uri.parse(e.link!));
-  //               _addToHistory(BasicAnime(
-  //                 info.episodeName,
-  //                 info.currentEpisodeLink,
-  //               ));
-  //             }
-  //           },
-  //           label: Text(e.title ?? 'Unknown'),
-  //         ),
-  //       ),
-  //     );
-  //   }).toList();
-  // }
-
-  // /// Watch with in app player
-  // openInAppPlayer(VideoServer e) {
-  //   // Only android has the
-  //   if (Util.isAndroid()) {
-  //     Navigator.pop(context);
-  //   }
-
-  //   Navigator.push(
-  //     context,
-  //     MaterialPageRoute(
-  //       builder: (context) => WatchAnimePage(video: e),
-  //       fullscreenDialog: true,
-  //     ),
-  //   );
-  // }
-
-  // /// Save this to watch history
-  // _addToHistory(BasicAnime anime) {
-  //   BlocProvider.of<AppBloc>(context)
-  //       .add(AppUpdateHistory(anime: anime, add: true));
-  // }
 }
 
 class _ServerList extends StatefulWidget {
