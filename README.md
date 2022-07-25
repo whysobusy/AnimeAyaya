@@ -8,7 +8,7 @@ Please do not use it for commercial purposes.
 </div>
 
 # Downloads
-Android[APK file](https://github.com/HenryQuan/AnimeOne/releases/latest)
+Android [APK file](https://github.com/whysobusy/AnimeAyaya/releases/tag/v1.0)
 IOS: you need download and compile the code by yourself.
 
 # Screenshots
