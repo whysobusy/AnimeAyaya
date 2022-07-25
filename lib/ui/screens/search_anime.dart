@@ -20,6 +20,28 @@ class _SearchAnimeState extends State<SearchAnime> {
 
   @override
   Widget build(BuildContext context) {
+    final Widget child;
+    if (formattedSearch.length < 3) {
+      child = const Center(
+        child: Image(
+          image: AssetImage('assets/images/gwen.jpg'),
+        )
+      );
+    } else {
+      child = BlocBuilder<AppBloc, AppState>(
+        builder: (context, state) {
+          if (state is AppInitialized) {
+            return AnimeGrid(
+              url: '/search.html?keyword=$formattedSearch',
+              hideDUB: state.hideDUB,
+            );
+          }
+
+          return const LoadingPage();
+        },
+      );
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: Container(
@@ -54,26 +76,7 @@ class _SearchAnimeState extends State<SearchAnime> {
           ),
         ),
       ),
-      body: renderGrid(),
+      body: child
     );
-  }
-
-  Widget renderGrid() {
-    if (formattedSearch.length < 3) {
-      return Container();
-    } else {
-      return BlocBuilder<AppBloc, AppState>(
-        builder: (context, state) {
-          if (state is AppInitialized) {
-            return AnimeGrid(
-              url: '/search.html?keyword=$formattedSearch',
-              hideDUB: state.hideDUB,
-            );
-          }
-
-          return const LoadingPage();
-        },
-      );
-    }
   }
 }
