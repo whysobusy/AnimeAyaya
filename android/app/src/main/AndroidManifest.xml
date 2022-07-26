@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.anime_player">
+   <uses-permission android:name="android.permission.INTERNET"/> <!-- Add this -->
    <application
         android:label="anime_player"
         android:name="${applicationName}"

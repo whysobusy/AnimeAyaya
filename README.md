@@ -16,4 +16,5 @@ IOS: you need to download and compile the code by yourself.
 
 # References
 [AnimeGo](https://github.com/HQAnime/AnimeGo-Re)
+[AnimeOne](https://github.com/HQAnime/AnimeOne)
 
