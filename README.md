@@ -4,7 +4,6 @@
 **An anime streaming app**
 
 This app is for personal study and research purposes only.
-Please do not use it for commercial purposes.
 
 </div>
 
