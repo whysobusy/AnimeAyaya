@@ -14,14 +14,14 @@ IOS: you need to download and compile the code by yourself.
 
 # Screenshots
 <div align="center">
-  <img src="https://github.com/whysobusy/AnimeAyaya/blob/main/screenshots/s1.png" width="180px" height="320px" />
-  <img src="https://github.com/whysobusy/AnimeAyaya/blob/main/screenshots/s2.png" width="180px" height="320px" />
-  <img src="https://github.com/whysobusy/AnimeAyaya/blob/main/screenshots/s3.png" width="180px" height="320px" />
-  <img src="https://github.com/whysobusy/AnimeAyaya/blob/main/screenshots/s4.png" width="180px" height="320px" />
-  <img src="https://github.com/whysobusy/AnimeAyaya/blob/main/screenshots/s5.png" width="180px" height="320px" />
-  <img src="https://github.com/whysobusy/AnimeAyaya/blob/main/screenshots/s6.png" width="180px" height="320px" />
-  <img src="https://github.com/whysobusy/AnimeAyaya/blob/main/screenshots/s7.png" width="180px" height="320px" />
-<img src="https://github.com/whysobusy/AnimeAyaya/blob/main/screenshots/s8.png" width="320px" height="180px" />
+  <img src="https://github.com/whysobusy/AnimeAyaya/blob/main/screenshots/s1.png" width="225px" height="400px" />
+  <img src="https://github.com/whysobusy/AnimeAyaya/blob/main/screenshots/s2.png" width="225px" height="400px" />
+  <img src="https://github.com/whysobusy/AnimeAyaya/blob/main/screenshots/s3.png" width="225px" height="400px" />
+  <img src="https://github.com/whysobusy/AnimeAyaya/blob/main/screenshots/s4.png" width="225px" height="400px" />
+  <img src="https://github.com/whysobusy/AnimeAyaya/blob/main/screenshots/s5.png" width="225px" height="400px" />
+  <img src="https://github.com/whysobusy/AnimeAyaya/blob/main/screenshots/s6.png" width="225px" height="400px" />
+  <img src="https://github.com/whysobusy/AnimeAyaya/blob/main/screenshots/s7.png" width="225px" height="400px" />
+<img src="https://github.com/whysobusy/AnimeAyaya/blob/main/screenshots/s8.png" width="400px" height="225px" />
 </div>
 
 # References
